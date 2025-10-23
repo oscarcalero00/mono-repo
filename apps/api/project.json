@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "command": "dotnet run --project apps/api/api.csproj"
+    },
+    "build": {
+      "command": "dotnet build apps/api/api.csproj"
+    },
+    "test": {
+      "command": "dotnet test apps/api/api.csproj"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+use PropertiesDb;
+
+// Limpia la colección si ya existía
+db.Properties.drop();
+
+// Inserta 5 propiedades de ejemplo
+db.Properties.insertMany([
+  {
+    _id: ObjectId(),
+    name: "Casa Familiar en Medellín",
+    address: "Calle 45 #12-34, Medellín",
+    price: 350000000,
+    codeInternal: "A-001",
+    year: 2018,
+    owner: {
+      idOwner: ObjectId(),
+      name: "Carlos Gómez",
+      address: "Carrera 10 #20-30",
+      photo: "https://example.com/owners/carlos.jpg",
+      birthday: ISODate("1980-04-12")
+    },
+    images: [
+      { file: "casa1_front.jpg", enabled: true },
+      { file: "casa1_backyard.jpg", enabled: false }
+    ],
+    traces: [
+      {
+        dateSale: ISODate("2023-08-12"),
+        value: 340000000,
+        tax: 10000000,
+        name: "Venta Anterior"
+      }
+    ]
+  },
+  {
+    _id: ObjectId(),
+    name: "Apartamento en Bogotá",
+    address: "Av. Suba #100-45, Bogotá",
+    price: 520000000,
+    codeInternal: "A-002",
+    year: 2021,
+    owner: {
+      idOwner: ObjectId(),
+      name: "Laura Rojas",
+      address: "Calle 90 #15-20",
+      photo: "https://example.com/owners/laura.jpg",
+      birthday: ISODate("1992-07-08")
+    },
+    images: [
+      { file: "apt_bogota_living.jpg", enabled: true },
+      { file: "apt_bogota_view.jpg", enabled: true }
+    ],
+    traces: [
+      {
+        dateSale: ISODate("2024-05-02"),
+        value: 510000000,
+        tax: 10000000,
+        name: "Compra inicial"
+      }
+    ]
+  },
+  {
+    _id: ObjectId(),
+    name: "Finca en Rionegro",
+    address: "Vereda El Tablazo, Rionegro",
+    price: 950000000,
+    codeInternal: "A-003",
+    year: 2016,
+    owner: {
+      idOwner: ObjectId(),
+      name: "María Fernanda López",
+      address: "Calle 15 #45-60",
+      photo: "https://example.com/owners/maria.jpg",
+      birthday: ISODate("1985-09-15")
+    },
+    images: [
+      { file: "finca1_front.jpg", enabled: true },
+      { file: "finca1_lake.jpg", enabled: true },
+      { file: "finca1_stables.jpg", enabled: false }
+    ],
+    traces: [
+      {
+        dateSale: ISODate("2021-03-20"),
+        value: 900000000,
+        tax: 50000000,
+        name: "Venta previa"
+      }
+    ]
+  },
+  {
+    _id: ObjectId(),
+    name: "Casa Campestre en Cali",
+    address: "Km 7 Vía a Jamundí, Cali",
+    price: 780000000,
+    codeInternal: "A-004",
+    year: 2019,
+    owner: {
+      idOwner: ObjectId(),
+      name: "Andrés Ramírez",
+      address: "Calle 5 #23-18",
+      photo: "https://example.com/owners/andres.jpg",
+      birthday: ISODate("1978-02-25")
+    },
+    images: [
+      { file: "cali_house_front.jpg", enabled: true }
+    ],
+    traces: []
+  },
+  {
+    _id: ObjectId(),
+    name: "Apartamento en Cartagena",
+    address: "Bocagrande, Edificio Solmar, Cartagena",
+    price: 1250000000,
+    codeInternal: "A-005",
+    year: 2022,
+    owner: {
+      idOwner: ObjectId(),
+      name: "Paola Díaz",
+      address: "Carrera 7 #50-22",
+      photo: "https://example.com/owners/paola.jpg",
+      birthday: ISODate("1990-12-05")
+    },
+    images: [
+      { file: "cartagena_view.jpg", enabled: true },
+      { file: "cartagena_pool.jpg", enabled: true }
+    ],
+    traces: [
+      {
+        dateSale: ISODate("2024-01-15"),
+        value: 1200000000,
+        tax: 50000000,
+        name: "Primera venta"
+      }
+    ]
+  }
+]);

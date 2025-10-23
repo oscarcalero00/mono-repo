@@ -48,3 +48,15 @@ Thumbs.db
 out
 
 test-output
+
+# .NET
+bin/
+obj/
+*.user
+*.dbmdl
+*.pdb
+
+
+# Environment
+.env
+.env.local
