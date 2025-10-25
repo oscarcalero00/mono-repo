@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "title": "Propiedades disponibles",
+    "loadingFilters": "Cargando filtros...",
+    "loadingProperties": "Cargando propiedades...",
+    "noProperties": "No hay propiedades disponibles.",
+    "filters": {
+      "name": "Nombre",
+      "address": "Dirección",
+      "minPrice": "Precio mínimo",
+      "maxPrice": "Precio máximo",
+      "search": "Buscar"
+    }
+  }
+}

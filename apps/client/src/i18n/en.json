@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "title": "Available Properties",
+    "loadingFilters": "Loading filters...",
+    "loadingProperties": "Loading properties...",
+    "noProperties": "No properties available.",
+    "filters": {
+      "name": "Name",
+      "address": "Address",
+      "minPrice": "Min price",
+      "maxPrice": "Max price",
+      "search": "Search"
+    }
+  }
+}
