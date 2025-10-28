@@ -34,6 +34,12 @@ To run the dev client  for your app, use:
 npx nx dev client
 ```
 
+To run the e2e client  for your app, use:
+
+```sh
+npx nx e2e client-e2e
+```
+
 To run the dev api  for your app, use:
 
 ```sh
