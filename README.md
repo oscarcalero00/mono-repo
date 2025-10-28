@@ -6,6 +6,48 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
+### Seed/install the database (MongoDB)
+
+This repo includes a MongoDB seed script at `apps/api/src/Db/PropertiesDb.js` (aka “api/dump”). To load it into a local MongoDB instance:
+
+```sh
+# Using mongosh (recommended)
+mongosh "mongodb://localhost:27017/PropertiesDb" --file apps/api/src/Db/PropertiesDb.js
+
+# Alternatively, from an interactive shell
+mongosh "mongodb://localhost:27017/PropertiesDb" --eval "load('apps/api/src/Db/PropertiesDb.js')"
+```
+
+
+## Run the project
+
+Before add env in the client 
+
+```sh
+NEXT_PUBLIC_BASE_URL=http://localhost:5065
+NEXT_PUBLIC_API_KEY=12345-abc
+```
+
+To run the dev client  for your app, use:
+
+```sh
+npx nx dev client
+```
+
+To run the dev api  for your app, use:
+
+```sh
+npx nx serve api
+```
+
+
+To run the test api  for your app, use:
+
+```sh
+dotnet test
+```
+
+
 ## Run tasks
 
 To run the dev server for your app, use:
@@ -29,6 +71,30 @@ npx nx show project client
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
 [More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## API (ASP.NET Core)
+
+Run the API with Nx:
+
+```sh
+npx nx serve api
+```
+
+Notes:
+- Requires .NET 8 SDK installed locally.
+- Swagger will be available at:
+	- https://localhost:7227/swagger
+	- or http://localhost:5065/swagger
+
+
+
+If you don't have MongoDB locally, you can install it via Homebrew:
+
+```sh
+brew tap mongodb/brew
+brew install mongodb-community@7.0
+brew services start mongodb-community@7.0
+```
 
 ## Add new projects
 

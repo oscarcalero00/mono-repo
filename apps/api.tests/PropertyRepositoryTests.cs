@@ -102,7 +102,7 @@ namespace Api.Tests
 
             // Assert
             result.Should().NotBeNull();
-            result.Should().HaveCount(2);
+            result.Item1.Should().HaveCount(2);
         }
     }
 

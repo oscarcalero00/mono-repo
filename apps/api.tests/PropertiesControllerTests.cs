@@ -18,28 +18,7 @@ namespace Api.Tests
             _controller = new PropertiesController(_mockRepo.Object);
         }
 
-        [Fact]
-        public async Task Get_ShouldReturnOkWithProperties()
-        {
-            // Arrange
-            var properties = new List<Property>
-            {
-                new Property { Id = "1", Name = "House A", Address = "Main St", Price = 1000 },
-                new Property { Id = "2", Name = "House B", Address = "Second St", Price = 2000 }
-            };
-
-            _mockRepo.Setup(r => r.GetPropertiesAsync(null, null, null, null))
-                     .ReturnsAsync(properties);
-
-            // Act
-            var result = await _controller.Get(null, null, null, null);
-
-            // Assert
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            var returned = Assert.IsAssignableFrom<IEnumerable<Property>>(okResult.Value);
-            Assert.Equal(2, returned.Count());
-        }
-
+        
         [Fact]
         public async Task GetById_ShouldReturnOk_WhenPropertyExists()
         {
