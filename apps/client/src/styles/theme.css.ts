@@ -16,6 +16,13 @@ export const [themeClass, themeVars] = createTheme({
       heading: '24px',
     },
   },
+  button:{ 
+    primaryBackground: '#0d6efd',
+    primaryColor: '#ffffff',
+    secondaryBackground: '#6c757d',
+    secondaryColor: '#ffffff',
+    background : '#0b5ed7'
+  }
 });
 
 export const breakpoints = {

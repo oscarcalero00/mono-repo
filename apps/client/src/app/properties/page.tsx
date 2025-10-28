@@ -5,14 +5,10 @@ import { Filters } from '@/components/Filters/Filters';
 import { PropertiesProvider } from '@/context/PropertiesContext';
 import type { Property } from '@/types/property';
 import { t } from '@/i18n';
+import { fetchProperties } from '@/lib/fetchProperties';
 
-async function getProperties(): Promise<Property[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/properties`, {
-    cache: 'no-store',
-  });
-
-  if (!res.ok) throw new Error('Error al obtener las propiedades');
-  return res.json();
+async function getProperties(): Promise<{ total: number; items: Property[] }> {
+  return fetchProperties({ path: 'api/Properties', page: 1, pageSize: 5 });
 }
 
 export default async function PropertiesPage() {

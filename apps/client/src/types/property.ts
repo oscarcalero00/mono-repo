@@ -21,6 +21,7 @@ export interface Trace {
 
 export interface Property {
   _id: string;
+  id: string;
   name: string;
   address: string;
   price: number;
@@ -36,4 +37,6 @@ export interface Filters {
   address?: string;
   minPrice?: number;
   maxPrice?: number;
+  page?: number;
+  pageSize?: number;
 }

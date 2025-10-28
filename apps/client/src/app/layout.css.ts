@@ -12,17 +12,15 @@ export const layout = style({
 
 export const main = style({
   flex: 1,
-  padding: "1rem", 
-  margin: "0 auto",
-  width: "100%",
-  maxWidth: "1200px",
-
   "@media": {
     [`screen and (min-width: ${breakpoints.tablet})`]: {
       padding: "1.5rem",
     },
     [`screen and (min-width: ${breakpoints.desktop})`]: {
       padding: "2rem",
+      maxWidth: "1200px",
+      width: "100%",
+      margin: "0 auto",
     },
   },
 });

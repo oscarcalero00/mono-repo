@@ -3,13 +3,21 @@ import { usePropertiesContext } from '@/context/PropertiesContext';
 import type { Filters } from '@/types/property';
 
 export function useProperties() {
-  const { properties, filters, setFilters, reload, loading } =
-    usePropertiesContext();
+  const {
+    properties,
+    filters,
+    setFilters,
+    reload,
+    loadMore,
+    total,
+    loading,
+    hasMore,
+  } = usePropertiesContext();
 
   const applyFilters = useCallback(
-    (newFilters: Filters) => {
+    async (newFilters: Filters) => {
       setFilters(newFilters);
-      reload();
+      await reload(newFilters);
     },
     [setFilters, reload]
   );
@@ -19,6 +27,9 @@ export function useProperties() {
     filters,
     applyFilters,
     reload,
+    loadMore,
+    total,
     loading,
+    hasMore,
   };
 }

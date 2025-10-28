@@ -1,9 +1,9 @@
 use PropertiesDb;
 
-// Limpia la colección si ya existía
-db.Properties.drop();
+// Limpia todos los registros existentes
+db.Properties.deleteMany({});
 
-// Inserta 5 propiedades de ejemplo
+// Inserta 5 propiedades con imágenes reales
 db.Properties.insertMany([
   {
     _id: ObjectId(),
@@ -16,12 +16,12 @@ db.Properties.insertMany([
       idOwner: ObjectId(),
       name: "Carlos Gómez",
       address: "Carrera 10 #20-30",
-      photo: "https://example.com/owners/carlos.jpg",
+      photo: "https://images.unsplash.com/photo-1603415526960-f7e0328b8c79?w=300",
       birthday: ISODate("1980-04-12")
     },
     images: [
-      { file: "casa1_front.jpg", enabled: true },
-      { file: "casa1_backyard.jpg", enabled: false }
+      { file: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800", enabled: true },
+      { file: "https://images.unsplash.com/photo-1600585152220-90363fe7a237?w=800", enabled: true }
     ],
     traces: [
       {
@@ -43,12 +43,12 @@ db.Properties.insertMany([
       idOwner: ObjectId(),
       name: "Laura Rojas",
       address: "Calle 90 #15-20",
-      photo: "https://example.com/owners/laura.jpg",
+      photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300",
       birthday: ISODate("1992-07-08")
     },
     images: [
-      { file: "apt_bogota_living.jpg", enabled: true },
-      { file: "apt_bogota_view.jpg", enabled: true }
+      { file: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800", enabled: true },
+      { file: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800", enabled: true }
     ],
     traces: [
       {
@@ -70,13 +70,13 @@ db.Properties.insertMany([
       idOwner: ObjectId(),
       name: "María Fernanda López",
       address: "Calle 15 #45-60",
-      photo: "https://example.com/owners/maria.jpg",
+      photo: "https://images.unsplash.com/photo-1590080875831-f2a94bdf76e7?w=300",
       birthday: ISODate("1985-09-15")
     },
     images: [
-      { file: "finca1_front.jpg", enabled: true },
-      { file: "finca1_lake.jpg", enabled: true },
-      { file: "finca1_stables.jpg", enabled: false }
+      { file: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=800", enabled: true },
+      { file: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=800", enabled: true },
+      { file: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800", enabled: false }
     ],
     traces: [
       {
@@ -98,11 +98,11 @@ db.Properties.insertMany([
       idOwner: ObjectId(),
       name: "Andrés Ramírez",
       address: "Calle 5 #23-18",
-      photo: "https://example.com/owners/andres.jpg",
+      photo: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300",
       birthday: ISODate("1978-02-25")
     },
     images: [
-      { file: "cali_house_front.jpg", enabled: true }
+      { file: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800", enabled: true }
     ],
     traces: []
   },
@@ -117,12 +117,12 @@ db.Properties.insertMany([
       idOwner: ObjectId(),
       name: "Paola Díaz",
       address: "Carrera 7 #50-22",
-      photo: "https://example.com/owners/paola.jpg",
+      photo: "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=300",
       birthday: ISODate("1990-12-05")
     },
     images: [
-      { file: "cartagena_view.jpg", enabled: true },
-      { file: "cartagena_pool.jpg", enabled: true }
+      { file: "https://images.unsplash.com/photo-1600585152220-90363fe7a237?w=800", enabled: true },
+      { file: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800", enabled: true }
     ],
     traces: [
       {
