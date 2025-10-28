@@ -3,17 +3,16 @@ import Image from 'next/image';
 import * as styles from './styles.css';
 import { fetchProperty } from '@/lib/fetchProperties';
 import { Property } from '@/types/property';
+import type { Image as PropertyImage, Trace } from '@/types/property';
 
 
 async function getProperty(id: string): Promise<Property | null> {
   return fetchProperty({ id });
 }
 
-export default async function PropertyDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function PropertyDetailPage(
+  { params }: { params: Promise<{ id: string }> }
+) {
   const { id } = await params;
   const property = await getProperty(id);
 
@@ -59,7 +58,7 @@ export default async function PropertyDetailPage({
         <section className={styles.section}>
           <h2>Imágenes</h2>
           <div className={styles.gallery}>
-            {property.images.map((img: any, index: number) => (
+            {property.images.map((img: PropertyImage, index: number) => (
               <Image
                 key={index}
                 src={`${img.file}`}
@@ -77,7 +76,7 @@ export default async function PropertyDetailPage({
         <section className={styles.section}>
           <h2>Historial de ventas</h2>
           <ul>
-            {property.traces.map((t: any, index: number) => (
+            {property.traces.map((t: Trace, index: number) => (
               <li key={index}>
                 <strong>{t.name}</strong> — {t.dateSale} — $
                 {t.value.toLocaleString()}

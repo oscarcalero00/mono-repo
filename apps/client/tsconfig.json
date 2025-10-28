@@ -30,19 +30,18 @@
       "node"
     ],
     "outDir": "dist",
-    "rootDir": "src",
+  "rootDir": "../..",
     "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
   },
   "include": [
-    "../../apps/client/.next/types/**/*.ts",
-    "../../dist/apps/client/.next/types/**/*.ts",
+    ".next/types/**/*.ts",
     "next-env.d.ts",
     "src/**/*.js",
+    "src/**/*.json",
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    ".next/types/**/*.ts", 
-    "src/**/*.json"
+    "../../dist/apps/client/.next/types/**/*.ts"
   ],
   "exclude": [
     "out-tsc",
